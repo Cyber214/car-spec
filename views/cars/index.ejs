@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/styleC.css">
   <title>Document</title>
 </head>
 <body>
@@ -14,15 +15,26 @@
       <a href="/cars/new">Add a Car</a>
     </div>
   </nav>
+  <ul>
   <div class="card-container">
     <% cars.forEach(car => { %>
-      <a href="/cars/<%= car._id %>">
+      <li>
+        <form 
+          action="/cars/<%= car._id %>?_method=DELETE"
+          method="POST"
+          class="delete-form"
+        >
+          <button class="delete-button" type="submit">X</button>
+        </form>
+        <a href="/cars/<%= car._id %>/edit"><button class="edit-button">✏️</button></a>
+				<a href="/cars/<%= car._id %>"><%= car.make %></a> 
         <div class="car-card">
           <h2><%= car.make %></h2>
           <img class="car-image" src="<%= car.photo %>" alt="A picture of a cool car">
         </div>
-      </a>
+      </li>
     <% }) %>
   </div>
+  </ul>
 </body>
 </html>

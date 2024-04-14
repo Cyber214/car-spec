@@ -1,8 +1,18 @@
 body {
+  background: url("https://images5.alphacoders.com/929/929552.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  font-size: 70px;
+}
+
 a {
-  color: #00B7FF;
+  font-size: 20px;
+  color: #000000;
 }

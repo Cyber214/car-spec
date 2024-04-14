@@ -13,7 +13,7 @@
       <a href="/cars/new">Add a Car</a>
     </div>
   </nav>
-  <form class="form-container" action="/cars" method="POST">
+  <form class="form-container" action="/cars" method="POST" autocomplete="off">
     <h1>Add a Car</h1>
     <input type="text" name="make" placeholder="Car Make">
     <br>
@@ -22,7 +22,7 @@
     <input type="text" name="photo" placeholder="Photo URL">
     <br>
     <label for="type">Type:
-      <select name="type" id="class">
+      <select name="type" id="type">
         <option value="Sport">Sport</option>
         <option value="Coupe">Coupe</option>
         <option value="Luxury">Luxury</option>

@@ -1,11 +1,13 @@
 import { Car } from "../models/car.js";
 
-function index(req, res) {
+
+function index(req, res){
   Car.find({})
   .then(cars => {
-    res.render("cars/index", {
+    console.log(cars)
+    res.render('cars/index', {
       cars: cars
-    })
+    })  
   })
   .catch(err => {
     console.log(err)
@@ -13,38 +15,39 @@ function index(req, res) {
   })
 }
 
-function newCar(req, res) {
+function newcar(req, res) {
   res.render('cars/new')
 }
 
 function create(req, res) {
-  req.body.description = req.body.description.split(', ')
+  req.body.description = false
   Car.create(req.body)
   .then(car => {
-    res.redirect('/cars')
+    res.redirect('cars')
   })
-  .catch(err => {
-    console.log(err)
+  .catch(error => {
+    console.log(error)
     res.redirect('/cars')
   })
 }
 
-function show(req, res) {
+function edit(req, res) {
   Car.findById(req.params.carId)
   .then(car => {
-    res.render('cars/show', {
+    res.render('cars/edit', {
       car: car
     })
   })
-  .catch(err => {
-    console.log(err)
+  .catch(error => {
+    console.log(error)
     res.redirect('/cars')
   })
 }
 
+
 export {
   index,
-  newCar as new,
+  newcar as new,
   create,
-  show,
+  edit,
 }
