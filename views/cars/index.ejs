@@ -14,8 +14,15 @@
       <a href="/cars/new">Add a Car</a>
     </div>
   </nav>
-  <div>
-    
+  <div class="card-container">
+    <% cars.forEach(car => { %>
+      <a href="/cars/<%= car._id %>">
+        <div class="car-card">
+          <h2><%= car.make %></h2>
+          <img class="car-image" src="<%= car.photo %>" alt="A picture of a cool car">
+        </div>
+      </a>
+    <% }) %>
   </div>
 </body>
 </html>

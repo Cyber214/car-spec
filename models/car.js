@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const carSchema = new Schema({
   make: String,
   model: String,
-  class: {type: String, enum: ['Sport', 'Coupe', 'Luxury', 'Hatchback', 'SUV', 'SUV Coupe', 'Sedan']},
+  type: {type: String, enum: ['Sport', 'Coupe', 'Luxury', 'Hatchback', 'SUV', 'SUV Coupe', 'Sedan']},
   description: String,
   color: {type: String, enum: ['White', 'Black', 'Red', 'Yellow', 'Green', 'Blue']},
   photo: String

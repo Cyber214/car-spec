@@ -6,6 +6,24 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <nav>
+    <div class="title-container">Car Spec</div>
+    <div class="link-container">
+      <a href="/cars">Car List</a>
+      <a href="/cars/new">Add a Car</a>
+    </div>
+  </nav>
+  <div class="details-container">
+    <h1><%= car.make %></h1>
+    <h2><%= car.model %></h2>
+    <img class="details-photo" src="<%= car.photo %>" alt="A picture of a cool car">
+    <h3>The car you chose is a  <%= car.color %>  <%= car.type %> car!</h3>
+    <h2>Description:</h2>
+    <ul>
+      <% car.description.forEach(description => { %>
+        <li><%= description %></li>
+      <% }) %>
+    </ul>
+  </div>
 </body>
 </html>
