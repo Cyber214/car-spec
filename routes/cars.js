@@ -3,7 +3,10 @@ import * as carsCtrl from "../controllers/cars.js"
 
 const router = Router()
 
-// GET localhost:3000/cars
+// GET localhost:3000/index
+router.get("/", carsCtrl.index)
 
+//GET localhost:3000/new
+router.get("/new", carsCtrl.new)
 
 export { router }

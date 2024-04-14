@@ -6,6 +6,47 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <nav>
+    <div class="title-container">Car Specs</div>
+    <div class="link-container">
+      <a href="/cars">Car List</a>
+      <a href="/cars/new">Add a Car</a>
+    </div>
+  </nav>
+  <form class="form-container" action="/cars" method="POST">
+    <h1>Add a Car</h1>
+    <input type="text" name="make" placeholder="Car Make">
+    <br>
+    <input type="text" name="model" placeholder="Car Model">
+    <br>
+    <input type="text" name="photo" placeholder="Photo URL">
+    <br>
+    <label for="class">Class:
+      <select name="class" id="class">
+        <option value="Sport">Sport</option>
+        <option value="Coupe">Coupe</option>
+        <option value="Luxury">Luxury</option>
+        <option value="Hatchback">Hatchback</option>
+        <option value="SUV">SUV</option>
+        <option value="SUV Coupe">SUV Coupe</option>
+        <option value="Sedan">Sedan</option>
+      </select>
+    </label>
+    <br>
+    <label for="color">Color:
+      <select name="color" id="color">
+        <option value="White">White</option>
+        <option value="Black">Black</option>
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+      </select>
+    </label>
+    <br>
+    <textarea placeholder="Enter your own description and seperate with comma, Eg. Top Speed: 320 Km/h" name="description" cols="25" rows="12"></textarea>
+    <br>
+    <button type="submit">Add Car</button>
+  </form>
 </body>
 </html>
