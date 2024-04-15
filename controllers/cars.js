@@ -20,10 +20,22 @@ function newcar(req, res) {
 }
 
 function create(req, res) {
-  req.body.description = false
   Car.create(req.body)
   .then(car => {
-    res.redirect('cars')
+    res.redirect(`/cars/${car._id}`)
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/cars')
+  })
+}
+
+function show(req, res) {
+  Car.findById(req.params.carId)
+  .then(car => {
+    res.render('cars/show', {
+      car: car
+    })
   })
   .catch(error => {
     console.log(error)
@@ -44,10 +56,35 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Car.findByIdAndUpdate(req.params.carId, req.body, {new: true})
+  .then(car => {
+    // redirect back to show view
+    res.redirect(`/cars/${req.params.carId}`)
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/cars')
+  })
+}
+
+function deleteCar(req, res) {
+  Car.findByIdAndDelete(req.params.carId)
+  .then(car => {
+    res.redirect('/cars')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/todos')
+  })
+}
 
 export {
   index,
   newcar as new,
   create,
   edit,
+  show,
+  update,
+  deleteCar as delete,
 }

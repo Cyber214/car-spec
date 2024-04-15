@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <div class="title-container">Car Specs</div>
+    <div class="link-container">
+      <a href="/cars">Car List</a>
+      <a href="/cars/new">Add a Car</a>
+    </div>
+  </nav>
+  <form class="form-container" action="/cars/<%= car._id %>?_method=PUT" method="POST" autocomplete="off">
+    <input type="text" name="photo" placeholder="Photo URL">
+    <br>
+    <textarea placeholder="Enter your own description and seperate with comma, Eg. Top Speed: 320 Km/h" name="description" cols="25" rows="12"></textarea>
+    <br>
+    <button type="submit">Save Car</button>
+  </form>
+</body>
+</html>

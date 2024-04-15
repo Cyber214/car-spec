@@ -27,9 +27,10 @@
           <button class="delete-button" type="submit">X</button>
         </form>
         <a href="/cars/<%= car._id %>/edit"><button class="edit-button">✏️</button></a>
-				<a href="/cars/<%= car._id %>"><%= car.make %></a> 
         <div class="car-card">
-          <h2><%= car.make %></h2>
+          <a href="/cars/<%= car._id %>"><h2><%= car.make %></h2></a>
+          <h2><%= car.model %></h2>
+          <h3><%= car.description %></h3>
           <img class="car-image" src="<%= car.photo %>" alt="A picture of a cool car">
         </div>
       </li>
